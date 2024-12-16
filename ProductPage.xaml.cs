@@ -12,10 +12,9 @@ public partial class ProductPage : ContentPage
 	}
     async void OnAddButtonClicked(object sender, EventArgs e)
     {
-        Product p;
         if (listView.SelectedItem != null)
         {
-            p = listView.SelectedItem as Product;
+            var p = listView.SelectedItem as Product;
             var lp = new ListProduct()
             {
                 ShopListID = sl.ID,
@@ -26,7 +25,7 @@ public partial class ProductPage : ContentPage
             await Navigation.PopAsync();
         }
     }
-        async void OnSaveButtonClicked(object sender, EventArgs e)
+    async void OnSaveButtonClicked(object sender, EventArgs e)
     {
         var product = (Product)BindingContext;
         await App.Database.SaveProductAsync(product);

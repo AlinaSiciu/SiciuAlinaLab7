@@ -62,6 +62,10 @@ namespace SiciuAlinaLab7.Data
         {
             return _database.DeleteAsync(slist);
         }
+        public Task<int> DeleteListProductAsync(ListProduct listProduct)
+        {
+            return _database.DeleteAsync(listProduct);
+        }
         public Task<int> SaveListProductAsync(ListProduct listp)
         {
             if (listp.ID != 0)
